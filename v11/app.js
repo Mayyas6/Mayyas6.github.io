@@ -11,7 +11,7 @@ var mongoose   = require("mongoose"),
     methodOverride = require("method-override"),
     seedDB     = require("./seeds");
 
-const port = 3000;
+const port = 5000;
 
 var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
@@ -51,4 +51,4 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
 
-app.listen(port, () => console.log(`Server was Started ${port}!`));
+app.listen(process.env.PORT || 5000);
